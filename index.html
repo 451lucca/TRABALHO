@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questões de CNH</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #c62828;
+      color: white;
+      padding: 10px 15px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+    }
+
+    .topbar-title {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      margin-left: auto;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 100%;
+      background: #b71c1c;
+      padding-top: 60px;
+      z-index: 900;
+    }
+
+    .content {
+      padding: 80px 20px 20px 80px; 
+    }
+
+    .question {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .question h3 {
+      margin: 0 0 10px 0;
+    }
+
+    button {
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #a31515;
+    }
+
+    /* Página de resultado */
+    #resultado {
+      display: none;
+      padding: 80px 20px 20px 80px;
+    }
+
+    .grafico {
+      margin-top: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    @media(max-width:400px) {
+      .topbar-title {
+        font-size: 16px;
+      }
+      .content, #resultado {
+        padding: 80px 10px 10px 70px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="topbar">
+    <span class="menu-icon">☰</span>
+    <div class="topbar-title">PROVA</div>
+    <div class="avatar"></div>
+  </div>
+
+  <!-- Menu lateral só visual -->
+  <div class="sidebar"></div>
+
+  <!-- Conteúdo -->
+  <div class="content" id="quiz">
+    <h2>Questões de CNH</h2>
+
+    <div class="question">
+      <h3>1. O que significa o sinal vermelho no semáforo?</h3>
+      <label><input type="radio" name="q1" value="1"> Parar</label><br>
+      <label><input type="radio" name="q1" value="0"> Seguir</label>
+    </div>
+
+    <div class="question">
+      <h3>2. A faixa contínua amarela no centro da via indica:</h3>
+      <label><input type="radio" name="q2" value="1"> Proibido ultrapassar</label><br>
+      <label><input type="radio" name="q2" value="0"> Permitido ultrapassar</label>
+    </div>
+
+    <div class="question">
+      <h3>3. Dirigir sob efeito de álcool resulta em:</h3>
+      <label><input type="radio" name="q3" value="1"> Multa e suspensão da CNH</label><br>
+      <label><input type="radio" name="q3" value="0"> Apenas advertência</label>
+    </div>
+
+    <div class="question">
+      <h3>4. Qual é a velocidade máxima em vias urbanas sem sinalização?</h3>
+      <label><input type="radio" name="q4" value="1"> 60 km/h</label><br>
+      <label><input type="radio" name="q4" value="0"> 80 km/h</label>
+    </div>
+
+    <div class="question">
+      <h3>5. Qual documento deve ser portado pelo condutor?</h3>
+      <label><input type="radio" name="q5" value="1"> CNH</label><br>
+      <label><input type="radio" name="q5" value="0"> Carteira de Trabalho</label>
+    </div>
+
+    <div class="question">
+      <h3>6. O cinto de segurança é:</h3>
+      <label><input type="radio" name="q6" value="1"> Obrigatório para todos</label><br>
+      <label><input type="radio" name="q6" value="0"> Opcional no banco traseiro</label>
+    </div>
+
+    <div class="question">
+      <h3>7. O que deve ser feito em caso de acidente com vítima?</h3>
+      <label><input type="radio" name="q7" value="1"> Acionar socorro imediatamente</label><br>
+      <label><input type="radio" name="q7" value="0"> Fugir do local</label>
+    </div>
+
+    <div class="question">
+      <h3>8. Pneus carecas podem causar:</h3>
+      <label><input type="radio" name="q8" value="1"> Aquaplanagem</label><br>
+      <label><input type="radio" name="q8" value="0"> Economia de combustível</label>
+    </div>
+
+    <div class="question">
+      <h3>9. Ultrapassar em curva é:</h3>
+      <label><input type="radio" name="q9" value="1"> Infração grave</label><br>
+      <label><input type="radio" name="q9" value="0"> Permitido</label>
+    </div>
+
+    <div class="question">
+      <h3>10. Ao se aproximar de uma escola, o condutor deve:</h3>
+      <label><input type="radio" name="q10" value="1"> Reduzir a velocidade</label><br>
+      <label><input type="radio" name="q10" value="0"> Acelerar</label>
+    </div>
+
+    <button onclick="finalizar()">Enviar Respostas</button>
+  </div>
+
+  <!-- Resultado -->
+  <div id="resultado">
+    <h2>Desempenho</h2>
+    <div class="grafico">
+      <p id="acertos"></p>
+      <p id="taxa"></p>
+      <p id="tempo"></p>
+    </div>
+    <h3>Dicas:</h3>
+    <ul id="dicas"></ul>
+  </div>
+
+  <script>
+    const inicio = new Date();
+
+    function finalizar() {
+      let acertos = 0;
+      for (let i = 1; i <= 10; i++) {
+        const marcado = document.querySelector(`input[name="q${i}"]:checked`);
+        if (marcado && marcado.value === "1") acertos++;
+      }
+      const fim = new Date();
+      const tempo = Math.floor((fim - inicio) / 1000);
+
+      let taxa = (acertos / 10) * 100;
+
+      document.getElementById("quiz").style.display = "none";
+      document.getElementById("resultado").style.display = "block";
+
+      document.getElementById("acertos").innerText = `Acertos: ${acertos}/10`;
+      document.getElementById("taxa").innerText = `Taxa de acerto: ${taxa}%`;
+      document.getElementById("tempo").innerText = `Tempo gasto: ${tempo}s`;
+
+      let dicas = document.getElementById("dicas");
+      dicas.innerHTML = "";
+      if (acertos < 7) {
+        dicas.innerHTML += "<li>Revise o material de legislação.</li>";
+        dicas.innerHTML += "<li>Melhore o foco durante a prova.</li>";
+        dicas.innerHTML += "<li>Considere refazer as aulas práticas.</li>";
+      } else {
+        dicas.innerHTML += "<li>Bom desempenho! Continue revisando para fixar o conteúdo.</li>";
+      }
+    }
+  </script>
+
+</body>
+</html>
