@@ -35,3 +35,8 @@ build/
 
 ### Outros ###
 *.log
+
+### Secrets / credentials ###
+.env
+*.env
+!.env.example

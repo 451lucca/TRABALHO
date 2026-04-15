@@ -221,13 +221,20 @@
       document.getElementById("tempo").innerText = `Tempo gasto: ${tempo}s`;
 
       let dicas = document.getElementById("dicas");
-      dicas.innerHTML = "";
+      while (dicas.firstChild) dicas.removeChild(dicas.firstChild);
+
+      function addDica(texto) {
+        const li = document.createElement("li");
+        li.textContent = texto;
+        dicas.appendChild(li);
+      }
+
       if (acertos < 7) {
-        dicas.innerHTML += "<li>Revise o material de legislação.</li>";
-        dicas.innerHTML += "<li>Melhore o foco durante a prova.</li>";
-        dicas.innerHTML += "<li>Considere refazer as aulas práticas.</li>";
+        addDica("Revise o material de legislação.");
+        addDica("Melhore o foco durante a prova.");
+        addDica("Considere refazer as aulas práticas.");
       } else {
-        dicas.innerHTML += "<li>Bom desempenho! Continue revisando para fixar o conteúdo.</li>";
+        addDica("Bom desempenho! Continue revisando para fixar o conteúdo.");
       }
     }
   </script>
